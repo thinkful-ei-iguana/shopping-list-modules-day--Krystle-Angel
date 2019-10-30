@@ -8,5 +8,3 @@ export default {
 
 import item from './item.js';
 
-console.log(item);
-console.log(foo);
