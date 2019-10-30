@@ -6,3 +6,7 @@ export default {
     hideCheckedItems: hideCheckedItems,
 };
 
+import item from './item.js';
+
+console.log(item);
+console.log(foo);

@@ -142,3 +142,4 @@ export default {
   bindEventListeners
 };
 
+import item from './item.js';
