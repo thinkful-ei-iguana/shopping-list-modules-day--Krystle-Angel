@@ -2,6 +2,8 @@ let items = [];
 let hideCheckedItems = false;
 
 export default {
-    items.hideCheckedItems
-    hideCheckedItems: hideCheckedItems
+    items,hideCheckedItems,
+    hideCheckedItems: hideCheckedItems,
 };
+
+const foo = bar;
