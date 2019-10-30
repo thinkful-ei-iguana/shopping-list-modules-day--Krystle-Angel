@@ -6,4 +6,3 @@ export default {
     hideCheckedItems: hideCheckedItems,
 };
 
-const foo = bar;

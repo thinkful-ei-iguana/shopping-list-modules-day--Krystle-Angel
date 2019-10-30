@@ -142,5 +142,3 @@ export default {
   bindEventListeners
 };
 
-console.log(store);
-console.log(foo);
