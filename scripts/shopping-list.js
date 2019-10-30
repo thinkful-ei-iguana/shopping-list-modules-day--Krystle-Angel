@@ -42,8 +42,16 @@ const render = function () {
 };
 
 const addItemToShoppingList = function (itemName) {
-  store.items.push({ id: cuid(), name: itemName, checked: false });
+    try { 
+      item.validateName(itemNAme) 
+      store.items.push(item.create(itemName)); 
+      render(); 
+    } catch(e) { 
+      console.log('Cannot add item ${error.message}'); 
+    };
 };
+
+// store.items.push({ id: cuid(), name: itemName, checked: false });
 
 const handleNewItemSubmit = function () {
   $('#js-shopping-list-form').submit(function (event) {
