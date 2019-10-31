@@ -43,11 +43,11 @@ const render = function () {
 
 const addItemToShoppingList = function (itemName) {
     try { 
-      item.validateName(itemNAme) 
+      item.validateName(itemName) 
       store.items.push(item.create(itemName)); 
       render(); 
     } catch(e) { 
-      console.log('Cannot add item ${error.message}'); 
+      console.log(`Cannot add item ${e.message}`); 
     };
 };
 
@@ -69,7 +69,6 @@ const handleItemCheckClicked = function () {
     event.preventDefault();
     const id = getItemIdFromElement(event.currentTarget);
     store.findAndToggleChecked(id);
-    store.findAndDelete(id);
     render();
   });
 };
@@ -95,7 +94,8 @@ const handleDeleteItemClicked = function () {
     // get the index of the item in store.items
     const id = getItemIdFromElement(event.currentTarget);
     // delete the item
-    deleteListItem(id);
+    // deleteListItem(id);
+    store.findAndDelete(id);
     // render the updated shopping list
     render();
   });
@@ -117,10 +117,18 @@ const handleDeleteItemClicked = function () {
  */
 const handleToggleFilterClick = function () {
   $('.js-filter-checked').click(() => {
-    store.toggleCheckedItemsFilter();
+    // store.findAndToggleChecked();
+    store.hideCheckedItems = !store.hideCheckedItems
     render();
   });
 };
+
+// const handleToggleFilterClick= function (id) {
+
+//   const item = items.find(item => item.id === id);
+//   item.checked = !item.checked;
+// };
+
 
 const handleEditShoppingItemSubmit = function () {
   $('.js-shopping-list').on('submit', '.js-edit-item', event => {

@@ -3,21 +3,28 @@ let items = [];
 let hideCheckedItems = false;
 
 const findById = function (id){
-    store.items.find(ele => {
-        return store.items.ele;
+    let returnItem = items.find(ele => {
+        return ele.id === id;
     })
+    return returnItem
 };
 
-const addItem = function (name) {
-    try {
+ const addItem = function (name) {
+    try {         
         item.validateName(name);
-        const newItem = item.create(name)
+        const newItem = item.create(name);
         this.items.push(newItem);        
-    } catch (error) {
-        console.log(`Cannot add item: ${error.message}`);
+     } catch (error) {
+         console.log(`Cannot add item: ${error.message}`);
 
-    }
+     }
+ };
+
+const findAndToggleChecked = function (id) {
+    const item = items.find(item => item.id === id);
+    item.checked = !item.checked;
 };
+
 
 const findAndUpdateName = function (id,newName){
     try{
@@ -28,11 +35,6 @@ const findAndUpdateName = function (id,newName){
     }
 
 
-}
-
-const findAndToggleChecked = function (id){
-    this.findById();
-    render();
 }
 
 const findAndDelete = function(id){
